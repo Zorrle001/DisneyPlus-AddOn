@@ -1,0 +1,29 @@
+{
+  "name": "Disney+ AddOn",
+  "description": "This is an AddOn for Disney+",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+        "service_worker": "background.js"
+  },
+  "content_scripts": [
+	{
+		"js": ["DisneyPlusOverlay.js"],
+		"matches": ["*://www.disneyplus.com/*"]
+	},
+	{
+		"js": ["youtube.js"],
+		"matches": ["*://www.youtube.com/*"]
+	},
+	{
+		"js": ["HyperionStream.js"],
+		"matches": ["*://viewer.spacedesk.net/?disneyplusaddon*"]
+	}
+  ],
+  "web_accessible_resources": [
+	{
+      "resources": [ "*.css", "*.png" ],
+      "matches": [ "*://www.disneyplus.com/*" ]
+    }
+  ]
+}

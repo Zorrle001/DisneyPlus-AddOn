@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#numberInput {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 25rem;
+    height: 15rem;
+
+    transform: translate(-50%, -50%);
+
+    background-color: #31343e;
+    box-shadow: 5px 5px 7px 1px rgba(0,0,0,0.7);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0.75rem;
+        background-color: #0063e5;
+    }
+
+    #numberInputCloseButton {
+        width: 1.3rem;
+        height: 1.3rem;
+
+        cursor: pointer;
+
+        position: absolute;
+        top: 1rem;
+        right: 0.5rem;
+
+        filter: invert(70%);
+
+        &:hover {
+            filter: invert(100%);
+        }
+    }
+
+    h2 {
+        margin-top: 3rem;
+        text-align: center;
+        font-family: Avenir,sans-serif;
+        font-weight: 600;
+        color: #f9f9f9;
+    }
+
+    input {
+        width: 80%;
+        height: 2rem;
+        margin-top: 2rem;
+        margin-left: 10%;
+        margin-right: 10%;
+
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    h3 {
+        height: 3rem;
+        width: min-content;
+        padding: 0.7rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        font-size: 1.5rem;
+        font-family: Avenir,sans-serif;
+        font-weight: 700;
+        color: #f9f9f9;
+
+        border-radius: 0.5rem;
+
+        cursor: pointer;
+
+        text-align: center;
+        background-color: #0063e5;
+
+        margin-top: 1rem;
+        user-select: none;
+
+        &:hover {
+            background-color: darken(#0063e5, -10%);
+        }
+    }
+
+}
+
+#messageBox {
+
+    position: absolute;
+    width: 23rem;
+    height: auto;
+    bottom: 0px;
+    right: 0px;
+    //background-color: aqua;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    gap: 1rem;
+    overflow: hidden;
+
+    transition: 0.5s all;
+
+    z-index: 12;
+
+    .message {
+
+        position: relative;
+        width: 100%;
+        min-height: 11rem;
+        /* silver */
+        background-color: #31343e;
+        box-shadow: 5px 5px 7px 1px rgba(0,0,0,0.7);
+
+        animation: popIn 0.3s ease-out;
+
+        &.popOut {
+            animation: popOut 0.3s ease-in;
+        }
+
+        &.close {
+            animation: close 0.3s ease-in;
+        }
+
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0.75rem;
+            background-color: #0063e5;
+        }
+
+        .messageCloseButton {
+            width: 1.3rem;
+            height: 1.3rem;
+
+            cursor: pointer;
+
+            position: absolute;
+            top: 1rem;
+            right: 0.5rem;
+
+            filter: invert(70%);
+
+            &:hover {
+                filter: invert(100%);
+            }
+        }
+
+        .messageText {
+            font-family: Avenir,sans-serif;
+            font-weight: 600;
+            color: #f9f9f9;
+
+            padding: 1.3rem;
+            padding-top: 1.75rem;
+
+            &.greenText {
+                /*color: #007F0E;*/
+                color: #05e66e;
+            }
+            &.redText {
+                color: #e60013;
+            }
+            &.orangeText {
+                color: #e87909;
+            }
+        }
+
+        &.iconMessage .messageText {
+            padding-left: 0px;
+            width: 16.8rem;
+            float: right;
+        }
+
+        .messageIcon {
+            margin: 1.3rem;
+            margin-top: 1.75rem;
+            margin-right: 0px;
+            width: 2rem;
+            height: 2rem;
+        }
+
+    }
+
+}
+
+@keyframes popIn {
+    0% {
+        margin-left: calc(100% + 3rem);
+    }
+    100% {
+        margin-left: 0rem;
+    }
+}
+
+@keyframes popOut {
+    0% {
+        margin-left: 0rem;
+    }
+    100% {
+        margin-left: calc(100% + 3rem);
+    }
+}
+
+@keyframes close {
+    0% {
+        transform: scale(1);
+        margin-left: 0rem;
+    }
+    25% {
+        opacity: 100%;
+    }
+    75% {
+        opacity: 0%;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0%;
+        margin-left: calc(100% + 3rem);
+    }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+
+    <link rel="stylesheet/less" type="text/css" href="previewStyle.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less@4" ></script>
+
+</head>
+<body>
+
+    <div id="numberInput">
+        <img src="https://media.discordapp.net/attachments/966085610005749831/993938689342324777/Close.png" id="numberInputCloseButton">
+        <h2>Bitte gib eine Zahl ein</h2>
+        <input type="number" min="0" id="numberInputValue">
+        <h3 id="numberInputButton">Bestätigen</h3>
+    </div>
+
+    <div id="messageBox">
+        <!-- <div class="message iconMessage">
+            <img src="Close.png" class="messageCloseButton">
+            <img src="Canceled.png" class="messageIcon">
+            <h2 class="messageText redText">Untertitel wurden deaktiviert</h2>
+        </div>
+        <div class="message">
+            <img src="Close.png" class="messageCloseButton">
+            <h2 class="messageText">Die Untertitel wurden aktiviert</h2>
+        </div>
+        <div class="message iconMessage">
+            <img src="Close.png" class="messageCloseButton">
+            <img src="Done.png" class="messageIcon">
+            <h2 class="messageText greenText">Untertitel wurden aktiviert</h2>
+        </div> -->
+    </div>
+
+    <script>
+        for(msg of document.querySelectorAll(".messageCloseButton")) {
+            msg.addEventListener("click", function() {
+                this.parentNode.classList.add("close");
+                parent = this.parentNode;
+                setTimeout(function(    ) {
+                    parent.remove();
+                }, 300, parent);
+            });
+        }
+
+        const msgBox = document.getElementById("messageBox");
+
+        function sendMessage(text) {
+            
+            msg = document.createElement("div");
+            msg.classList.add("message");
+            closeBtn = document.createElement("img");
+            closeBtn.src = "https://media.discordapp.net/attachments/966085610005749831/993938689342324777/Close.png";
+            closeBtn.classList.add("messageCloseButton");
+            h2 = document.createElement("h2");
+            h2.innerText = text;
+            h2.classList.add("messageText");
+
+            msg.appendChild(closeBtn);
+            msg.appendChild(h2);
+
+            closeBtn.addEventListener("click", function() {
+                this.parentNode.classList.add("close");
+                parent = this.parentNode;
+                setTimeout(function() {
+                    parent.remove();
+                }, 300, parent);
+            });
+
+            popOutTimeout(msg);
+
+            msgBox.appendChild(msg);
+
+        }
+
+        function sendCancelMessage(text) {
+            
+            msg = document.createElement("div");
+            msg.classList.add("message");
+            msg.classList.add("iconMessage")
+            closeBtn = document.createElement("img");
+            closeBtn.src = "https://media.discordapp.net/attachments/966085610005749831/993938689342324777/Close.png";
+            closeBtn.classList.add("messageCloseButton");
+            icon = document.createElement("img");
+            icon.src = "https://cdn.discordapp.com/attachments/966085610005749831/993938689023553557/Cancel.png";
+            icon.classList.add("messageIcon");
+            h2 = document.createElement("h2");
+            h2.innerText = text;
+            h2.classList.add("messageText");
+            h2.classList.add("redText");
+
+            msg.appendChild(closeBtn);
+            msg.appendChild(icon);
+            msg.appendChild(h2);
+
+            closeBtn.addEventListener("click", function() {
+                this.parentNode.classList.add("close");
+                parent = this.parentNode;
+                setTimeout(function() {
+                    parent.remove();
+                }, 300, parent);
+            });
+
+            popOutTimeout(msg);
+
+            msgBox.appendChild(msg);
+
+        }
+
+        function sendSuccessMessage(text) {
+            
+            msg = document.createElement("div");
+            msg.classList.add("message");
+            msg.classList.add("iconMessage")
+            closeBtn = document.createElement("img");
+            closeBtn.src = "https://media.discordapp.net/attachments/966085610005749831/993938689342324777/Close.png";
+            closeBtn.classList.add("messageCloseButton");
+            icon = document.createElement("img");
+            icon.src = "Done.png";
+            icon.classList.add("messageIcon");
+            h2 = document.createElement("h2");
+            h2.innerText = text;
+            h2.classList.add("messageText");
+            h2.classList.add("greenText");
+
+            msg.appendChild(closeBtn);
+            msg.appendChild(icon);
+            msg.appendChild(h2);
+
+            closeBtn.addEventListener("click", function() {
+                this.parentNode.classList.add("close");
+                parent = this.parentNode;
+                setTimeout(function() {
+                    parent.remove();
+                }, 300, parent);
+            });
+
+            popOutTimeout(msg);
+
+            msgBox.appendChild(msg);
+
+        }
+
+        function sendWarnMessage(text) {
+            
+            msg = document.createElement("div");
+            msg.classList.add("message");
+            msg.classList.add("iconMessage")
+            closeBtn = document.createElement("img");
+            closeBtn.src = "https://media.discordapp.net/attachments/966085610005749831/993938689342324777/Close.png";
+            closeBtn.classList.add("messageCloseButton");
+            icon = document.createElement("img");
+            icon.src = "Warn.png";
+            icon.classList.add("messageIcon");
+            h2 = document.createElement("h2");
+            h2.innerText = text;
+            h2.classList.add("messageText");
+            h2.classList.add("orangeText");
+
+            msg.appendChild(closeBtn);
+            msg.appendChild(icon);
+            msg.appendChild(h2);
+
+            closeBtn.addEventListener("click", function() {
+                this.parentNode.classList.add("close");
+                parent = this.parentNode;
+                setTimeout(function() {
+                    parent.remove();
+                }, 300, parent);
+            });
+
+            popOutTimeout(msg);
+
+            msgBox.appendChild(msg);
+
+        }
+
+        async function popOutTimeout() {
+            await setTimeout(function(msg) {
+                msg.classList.add("popOut");
+                setTimeout(function(msg) {
+                    msg.remove();
+                }, 300, msg);
+            }, 5000, msg);
+        }
+
+    </script>
+    
+</body>
+</html>

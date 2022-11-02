@@ -1,0 +1,261 @@
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+scrollbar-width: auto;
+scrollbar-color: #b9b9b9 #0e0b14;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+background: #0e0b14;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: #b9b9b9;
+border-radius: 10px;
+}
+
+
+
+
+#disneyplusaddon-overlayBox {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    height: 4rem;
+    width: auto;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 3rem;
+    z-index: 99999999;
+}
+
+#disneyplusaddon-overlayButtonBack, #disneyplusaddon-overlayButtonFore {
+    height: 100%;
+    width:  auto;
+    z-index: 999999999;
+    cursor: pointer;
+}
+
+#disneyplusaddon-overlayButtonFore {
+    transform: scaleX(-1);
+}
+
+#disneyplusaddon-overlayButtonReload {
+    height: 100%;
+    padding: 0.5rem;
+    width:  auto;
+    z-index: 999999999;
+    cursor: pointer;
+}
+
+#disneyplusaddon-overlayButtonStream {
+    height: 100%;
+    padding: 0.7rem;
+    width:  auto;
+    z-index: 999999999;
+    cursor: pointer;
+}
+
+
+
+
+
+#disneyplusaddon-controlLeftStream {
+    /*width: 36px;
+    /height: 36px;*/
+    padding: 3px;
+    background: center/cover url('chrome-extension://imbmjeaofempmmjbkcdgmomjbpminepc/rsc/WhiteShare.png') no-repeat content-box;
+    /*z-index: 999999;*/
+    cursor: pointer;
+    opacity: .6;
+}
+#disneyplusaddon-controlLeftStream:hover {
+    opacity: 1;
+}
+
+
+
+/*TOP BAR
+
+    position: fixed;
+    top: 72px;
+    left: 0px;
+    height: 45px;
+    width: 100%;
+    padding: 0rem calc(3.5vw + 24px);
+    background: black;
+    z-index: 999;
+
+*/
+
+
+
+
+
+
+
+#disneyplusaddon-episodeView {
+    position: relative;
+    width: 100%;
+    height: 10rem;
+    background-color: blue;
+}
+
+#disneyplusaddon-shelf {
+    margin-top: 2rem;
+    width: 100% !important;
+}
+
+/* SEASON BAR */
+.sc-imAxmJ.eOFVeq {
+    position: fixed;
+    top: 72px;
+    left: 0px;
+    height: 45px;
+    width: 100%;
+    padding: 0rem calc(3.5vw + 24px);
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+
+    /*transition: 0.4s;*/
+   transition: background-color 0.25s ease-in-out 0s;
+}
+
+.sc-imAxmJ.eOFVeq.disneyplusaddon-filled {
+    background-color: black;
+}
+
+/*Episode Main Section*/
+.sc-kDgGX.iELlsX {
+    z-index: 3;
+}
+
+/* Play ICON */
+#disneyplusaddon-shelf .sc-iwsKbI.dlzPWi > div {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+}
+#disneyplusaddon-shelf .sc-iwsKbI.dlzPWi > div > div {
+    width: 1.3rem !important;
+    height: 1.3rem !important;
+}
+
+#disneyplusaddon-shelf button {
+    display: none !important;
+}
+
+#disneyplusaddon-shelf > div, #disneyplusaddon-shelf .slick-track {
+    position: relative;
+    width: 100% !important;
+}
+
+#disneyplusaddon-shelf .slick-track {
+    position: relative;
+    width: 30% !important;
+
+    transform: none !important;
+}
+
+#disneyplusaddon-shelf .slick-track > div, #disneyplusaddon-shelf .slick-track > div > div {
+    position: relative;
+    width: 100% !important;
+}
+
+#disneyplusaddon-shelf .slick-track > div {
+    margin-bottom: 2rem;
+}
+
+#disneyplusaddon-shelf .slick-track a {
+    position: none;
+}
+
+#disneyplusaddon-shelf .slick-track > div .sc-gZMcBi.sc-fjdhpX.jkUWeb {
+    /*position: absolute;
+    display: none;*/
+
+    /*top: -60%;*/
+    /*top: -2rem;*/
+    /*top: -100%;
+    left: calc(100% + 2rem);
+    bottom: initial;
+    transform: translateY(100%) scale(1.5);
+    transform-origin: left;
+    width: 100%;
+    /*height: 70%;*/
+    /*height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+
+    top: 0px;
+    left: 100%;
+    height: 100%;
+    width: 200%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: none;
+    padding: 0px;
+    padding-left: 2rem;
+}
+
+#disneyplusaddon-shelf .slick-track > div .sc-gZMcBi.sc-fjdhpX.jkUWeb p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+#disneyplusaddon-shelf .slick-track > div .sc-gZMcBi.sc-fjdhpX.jkUWeb div {
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+
+
+
+/* EMPFEHLUNGEN */
+#disneyplusaddon-recommendations #disneyplusaddon-shelf .slick-track {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5%;
+    width: 100% !important;
+}
+#disneyplusaddon-recommendations #disneyplusaddon-shelf .slick-track > div {
+    margin-bottom: 1.5%;
+    width: calc(100% / 3 - 1%) !important;
+}
+
+
+
+
+
+
+
+/* SEARCH BAR */
+.sc-cXHFlN.gJTaoX {
+    border-radius: 1rem;
+    width: calc(100% - 2*(3.5vw + 24px + 2rem));
+    height: 5rem;
+    margin: 0 calc(3.5vw + 24px + 2rem);
+    margin-top: 1.5rem;
+    padding: 0rem 1.5rem;
+}
+
+/* SEARCH BAR BUTTON */
+.sc-ihiiSJ {
+    height: 5rem !important;
+    margin-top: 1.7rem;
+    margin-right: calc(3.5vw + 24px + 2rem);
+}
+
+
+[data-route="ORIGINALS"], [data-route="FILME"], [data-route="SERIEN"] {
+    display: none !important;
+}
